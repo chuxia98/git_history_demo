@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+inhibit_all_warnings!
+
+target 'GitHistory' do
+  use_frameworks!
+
+  # Pods for GitHistory
+    pod 'MJRefresh'
+    pod 'FMDB'
+    pod 'SVProgressHUD'
+    pod 'Alamofire',    '~> 4.9.1'
+    
+end
