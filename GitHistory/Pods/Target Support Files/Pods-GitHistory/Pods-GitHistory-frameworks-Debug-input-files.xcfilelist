@@ -1,6 +1,0 @@
-${PODS_ROOT}/Target Support Files/Pods-GitHistory/Pods-GitHistory-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework
-${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
-${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
-${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework
