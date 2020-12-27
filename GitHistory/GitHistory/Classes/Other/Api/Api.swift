@@ -7,6 +7,8 @@
 
 import UIKit
 
+let kPrintEable = true
+
 class Api {
 
     static private let kBaseIp = "https://api.github.com/"

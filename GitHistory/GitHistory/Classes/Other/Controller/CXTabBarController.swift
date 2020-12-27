@@ -13,26 +13,22 @@ class CXTabBarController: UITabBarController {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.white
-        self.tabBar.tintColor = UIColor.green
+        self.tabBar.tintColor = UIColor.white
         self.tabBar.barTintColor = UIColor.black
         self.setupTabbar()
     }
     
     func setupTabbar() {
-        let home = self.create(HomeViewController(), "歌手", "tabbar_singer")
-        let history = self.create(HistoryViewController(), "歌手", "tabbar_singer")
-//        let rank = self.create(RankViewController(), "排行榜", "tabbar_rank")
-//        let collect = self.create(CollectionViewController(), "收藏", "tabbar_collect")
-//        let setting = self.create(SettingViewController(), "设置", "tabbar_setting")
+        let home = self.create(HomeViewController(), "Home")
+        let history = self.create(HistoryViewController(), "Histroy", .history, 2)
 
         self.viewControllers = [home, history]
     }
     
-    func create(_ vc: UIViewController, _ title: String, _ imageNamed: String) -> UIViewController {
+    func create(_ vc: UIViewController, _ title: String, _ systemItem: UITabBarItem.SystemItem = .contacts, _ tag: Int = 1) -> UIViewController {
         let nav = CXNavigationController(rootViewController: vc)
         vc.title = title;
-        vc.tabBarItem.image = UIImage(named: imageNamed);
-        vc.tabBarItem.selectedImage = UIImage(named: imageNamed + "_s")
+        vc.tabBarItem = UITabBarItem(tabBarSystemItem: systemItem, tag: tag)
         vc.tabBarItem.title = title;
         return nav
     }

@@ -12,7 +12,7 @@ class CXNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationBar.tintColor = UIColor.blue
+        self.navigationBar.tintColor = UIColor.red
         self.navigationBar.barTintColor = UIColor.black
         self.delegate = self
         self.interactivePopGestureRecognizer?.delegate = self;

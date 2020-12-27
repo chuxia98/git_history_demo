@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     
     lazy var timeLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
@@ -41,6 +42,7 @@ class HomeViewController: UIViewController {
         
         listener()
         reloadTime()
+        loadCache()
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,7 +57,7 @@ class HomeViewController: UIViewController {
         viewX = 15
         viewY = 15
         viewW = view.bounds.width - viewX * 2
-        viewH = timeLabel.font.lineHeight
+        viewH = timeLabel.text!.cx_boundingRect(with: viewW)
         timeLabel.frame = CGRect(x: viewX, y: viewY, width: viewW, height: viewH)
         
         viewY = timeLabel.frame.maxY + 15
@@ -72,13 +74,34 @@ extension HomeViewController {
             guard let wself = self else {
                 return
             }
-            wself.reloadTime()
             wself.textLabel.text = desc
+            wself.reloadTime()
             wself.viewDidLayoutSubviews()
         }
     }
     
     func reloadTime() {
         self.timeLabel.text = Date().description(with: Locale.init(identifier: "ZH"))
+        guard let data = self.textLabel.text else {
+            return
+        }
+        if data.isEmpty {
+            return
+        }
+        let reuslt = Cache.shared.insert(data: data, time: self.timeLabel.text ?? "")
+        
+        if reuslt {
+            print("save success")
+        }
+    }
+    
+    func loadCache() {
+        let rows = Cache.shared.queryList(count: 1)
+        guard let data = rows.first else {
+            return
+        }
+        let time = data["time"] ?? ""
+        self.timeLabel.text = "加载历史\n" + time
+        self.textLabel.text = data["data"]
     }
 }

@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5489107EF5B38790E23B1154 /* Pods_GitHistory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A29A2063D872163081D1DB /* Pods_GitHistory.framework */; };
+		A93749122598C091005B839E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93749112598C091005B839E /* DetailViewController.swift */; };
 		A9483C8E2597AE8E00DC6A9B /* String+cx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9483C8D2597AE8E00DC6A9B /* String+cx.swift */; };
+		A9483C9A259854AC00DC6A9B /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9483C99259854AC00DC6A9B /* Cache.swift */; };
+		A9483CB825985D6A00DC6A9B /* CXTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9483CB725985D6A00DC6A9B /* CXTableViewCell.swift */; };
 		A9C3CB7A25979E7E006BCD7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3CB7925979E7E006BCD7B /* AppDelegate.swift */; };
 		A9C3CB8125979E7E006BCD7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C3CB7F25979E7E006BCD7B /* Main.storyboard */; };
 		A9C3CB8325979E7F006BCD7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C3CB8225979E7F006BCD7B /* Assets.xcassets */; };
@@ -26,7 +29,10 @@
 /* Begin PBXFileReference section */
 		14A29A2063D872163081D1DB /* Pods_GitHistory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHistory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2844E63B3C310B90F433F9 /* Pods-GitHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHistory.release.xcconfig"; path = "Target Support Files/Pods-GitHistory/Pods-GitHistory.release.xcconfig"; sourceTree = "<group>"; };
+		A93749112598C091005B839E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A9483C8D2597AE8E00DC6A9B /* String+cx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+cx.swift"; sourceTree = "<group>"; };
+		A9483C99259854AC00DC6A9B /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		A9483CB725985D6A00DC6A9B /* CXTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXTableViewCell.swift; sourceTree = "<group>"; };
 		A9C3CB7625979E7E006BCD7B /* GitHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C3CB7925979E7E006BCD7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9C3CB8025979E7E006BCD7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +87,23 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		A9483CBA2598608B00DC6A9B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				A9483C99259854AC00DC6A9B /* Cache.swift */,
+				A9C3CBD92597A524006BCD7B /* RequestTimer.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		A9483CBC259860AD00DC6A9B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9C3CB9E25979F4C006BCD7B /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A9C3CB6D25979E7E006BCD7B = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +140,6 @@
 			children = (
 				A9C3CBDE2597A80B006BCD7B /* History */,
 				A9C3CBDD2597A800006BCD7B /* Home */,
-				A9C3CBD92597A524006BCD7B /* RequestTimer.swift */,
 				A9C3CBA325979F96006BCD7B /* Other */,
 			);
 			path = Classes;
@@ -126,6 +148,7 @@
 		A9C3CBA325979F96006BCD7B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				A9483CBA2598608B00DC6A9B /* Tool */,
 				A9483C8C2597AE7D00DC6A9B /* Category */,
 				A9C3CBD42597A2F3006BCD7B /* Api */,
 				A9C3CBAF2597A0B2006BCD7B /* Network */,
@@ -138,6 +161,7 @@
 		A9C3CBAD2597A09C006BCD7B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				A9483CB725985D6A00DC6A9B /* CXTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -179,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				A9C3CBDC2597A7FB006BCD7B /* View */,
-				A9C3CB9E25979F4C006BCD7B /* HomeViewController.swift */,
+				A9483CBC259860AD00DC6A9B /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -188,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				A9C3CBAA2597A05A006BCD7B /* HistoryViewController.swift */,
+				A93749112598C091005B839E /* DetailViewController.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -306,11 +331,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A93749122598C091005B839E /* DetailViewController.swift in Sources */,
 				A9C3CBE02597A829006BCD7B /* HomeContentView.swift in Sources */,
 				A9C3CB7A25979E7E006BCD7B /* AppDelegate.swift in Sources */,
 				A9C3CBA525979FB7006BCD7B /* CXNavigationController.swift in Sources */,
 				A9C3CBAB2597A05A006BCD7B /* HistoryViewController.swift in Sources */,
+				A9483C9A259854AC00DC6A9B /* Cache.swift in Sources */,
 				A9C3CB9F25979F4C006BCD7B /* HomeViewController.swift in Sources */,
+				A9483CB825985D6A00DC6A9B /* CXTableViewCell.swift in Sources */,
 				A9483C8E2597AE8E00DC6A9B /* String+cx.swift in Sources */,
 				A9C3CBB12597A0BF006BCD7B /* Network.swift in Sources */,
 				A9C3CBD62597A2F9006BCD7B /* Api.swift in Sources */,
@@ -392,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -447,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

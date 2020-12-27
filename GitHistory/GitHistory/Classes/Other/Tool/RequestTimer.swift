@@ -26,19 +26,19 @@ class RequestTimer {
             }
             if (resopnse.error != nil) {
                 print("\(resopnse.error!)")
-                wself.handlerBloc(message: resopnse.error!.description)
+                wself.handlerBlock(message: resopnse.error!.description)
                 return;
             }
             guard let data = resopnse.data as? [String: Any] else {
                 print("data error")
-                wself.handlerBloc(message: "data get failure")
+                wself.handlerBlock(message: "data get failure")
                 return;
             }
-            wself.handlerBloc(message: data.description)
+            wself.handlerBlock(message: data.description)
         }
     }
     
-    func handlerBloc(message: String) {
+    func handlerBlock(message: String) {
         if (self.handler != nil) {
             self.handler!(message)
         }
